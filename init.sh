@@ -10,7 +10,7 @@ git init
 touch manuscript/1_main.md
 mkdir figs
 mkdir out
-ln -s ../reveal.js ./out/reveal.js
+ln -s ../../reveal.js ./out/reveal.js
 rm README.md-e
 rm manuscript/0_1_meta.md-e
 rm init.sh
