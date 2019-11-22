@@ -8,6 +8,7 @@ NOW_DATE=`date "+%F"`
 sed -i -e "s/YYYY-MM-DD/${NOW_DATE}/" ./README.md
 git init
 touch manuscript/1_main.md
+echo "out/*" > .gitignore
 mkdir figs
 mkdir out
 ln -s ../../reveal.js ./out/reveal.js
