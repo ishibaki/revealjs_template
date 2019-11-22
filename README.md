@@ -19,7 +19,7 @@ Starting to write: YYYY-MM-DD
 chmod +x ./init.sh && ./init.sh
 ```
 
-And start to write your manuscript in ./manuscript/1_main.md
+And start to write your manuscript in `./manuscript/1_main.md`
 
 ## Automatic generation
 
