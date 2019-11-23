@@ -13,6 +13,18 @@ Starting to write: YYYY-MM-DD
 
 **Clone this repo in the directory including reveal.js repo.**
 
+```
+│
+├─ revealjs_template/
+│  ├─ manuscript/
+│  ├─ figs/
+│  ├─ out/
+│  │  └─ reveal.js/ @ ──┐
+│  └─ Makefile          │
+│                       │
+└─ reveal.js/ <─────────┘
+```
+
 ## How to use
 
 ```sh
