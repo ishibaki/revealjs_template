@@ -13,6 +13,14 @@ Starting to write: YYYY-MM-DD
 
 **Clone this repo in the directory including reveal.js repo.**
 
+## How to use
+
+```sh
+chmod +x ./init.sh && ./init.sh
+```
+
+then
+
 ```
 │
 ├─ revealjs_template/
@@ -23,12 +31,6 @@ Starting to write: YYYY-MM-DD
 │  └─ Makefile          │
 │                       │
 └─ reveal.js/ <─────────┘
-```
-
-## How to use
-
-```sh
-chmod +x ./init.sh && ./init.sh
 ```
 
 And start to write your manuscript in `./manuscript/1_main.md`
