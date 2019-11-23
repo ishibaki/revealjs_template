@@ -54,24 +54,26 @@ html = -t html5\
 
 pptx = -t pptx\
 	   -s\
+	   --standalone\
+	   --slide-level=2\
 
 all: $(changed_files)
-	pandoc -o ./$(out_dir)/$(output_file).revealjs.$(default_type) $(reader) $(writer) $(revealjs) ./$(manuscript_dir)/$(files)
+	cd ./$(manuscript_dir); pandoc -o ../$(out_dir)/$(output_file).revealjs.$(default_type) $(reader) $(writer) $(revealjs) ./$(files); cd ..
 
 %.revealjs: $(changed_files)
-	pandoc -o ./$(out_dir)/$@.html $(reader) $(writer) $(revealjs) ./$(manuscript_dir)/$(files)
+	cd ./$(manuscript_dir); pandoc -o ../$(out_dir)/$@.html $(reader) $(writer) $(revealjs) ./$(files); cd ..
 
 %.docx: $(changed_files)
-	pandoc -o ./$(out_dir)/$@ $(reader) $(writer) $(document_args) $(docx) ./$(manuscript_dir)/$(files)
+	cd ./$(manuscript_dir); pandoc -o ../$(out_dir)/$@ $(reader) $(writer) $(document_args) $(docx) ./$(files); cd ..
 
 %.pdf: $(changed_files)
-	pandoc -o ./$(out_dir)/$@ $(reader) $(writer) $(document_args) $(pdf) ./$(manuscript_dir)/$(files)
+	cd ./$(manuscript_dir); pandoc -o ../$(out_dir)/$@ $(reader) $(writer) $(document_args) $(pdf) ./$(files); cd ..
 
 %.html: $(changed_files)
-	pandoc -o ./$(out_dir)/$@ $(reader) $(writer) $(document_args) $(html) ./$(manuscript_dir)/$(files)
+	cd ./$(manuscript_dir); pandoc -o ../$(out_dir)/$@ $(reader) $(writer) $(document_args) $(html) ./$(files); cd ..
 
 %.pptx: $(changed_files)
-	pandoc -o ./$(out_dir)/$@ $(reader) $(writer) $(pptx) ./$(manuscript_dir)/$(files)
+	cd ./$(manuscript_dir); pandoc -o ../$(out_dir)/$@ $(reader) $(writer) $(pptx) ./$(files); cd ..
 
 ifeq ($(shell uname),Linux)
 open:
